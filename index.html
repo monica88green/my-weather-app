@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monica's Weather App</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/297bc7bc95.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <form id="city-search-form" class="city-search">
+          <input type="text" id="search-input" placeholder="Enter a City" />
+          <input type="submit" value="Search" />
+        </form>
+
+        <h1 id="city">Denver</h1>
+        <h2>
+          Sunday 9/27
+        </h2>
+        <span class="city-temp" id="city-temp"> 19 </span>
+
+        <div class="row">
+          <div class="col-6">
+
+          </div>
+          <ul>
+            <li class="current-humidity" id="current-humidity"> </li>
+            <li class="windspeed" id="current-windspeed"> </li>
+          </ul>
+
+          <div class="row">
+            <div class="col">
+              Monday </br>
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+            <div class="col">
+              Tuesday </br>
+              <i class="fas fa-sun"></i>
+            </div>
+            <div class="col">
+              Wednesday </br>
+              <i class="fas fa-sun"></i>
+            </div>
+            <div class="col">
+              Thursday </br>
+              <i class="fas fa-cloud-sun-rain"></i>
+            </div>
+            <div class="col">
+              Friday </br>
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="src/index.js"></script>
+</body>
