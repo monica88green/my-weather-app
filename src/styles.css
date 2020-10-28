@@ -1,0 +1,49 @@
+body {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+h1,
+h2 {
+  color: #455a64;
+}
+h1 {
+  font-weight: 900;
+}
+.city-temp {
+  font-size: 28px;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 20px;
+  font-weight: 12px;
+  position: relative;
+  bottom: 60px;
+}
+
+.city-search {
+  margin-top: 20px;
+}
+
+.card {
+  border: none;
+}
+
+.row {
+  margin-right: -45px;
+  margin-left: 7px;
+}
+
+.card-body {
+  margin: 0 auto;
+  margin-top: 65px;
+  padding: 0 40px 20px 40px;
+  border: solid #455a64;
+}
+
+.fa-cloud-sun,
+.fa-sun,
+.fa-cloud-sun-rain {
+  color: #84ffff;
+  font-size: 40px;
+}
