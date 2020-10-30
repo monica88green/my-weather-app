@@ -25,7 +25,7 @@ function getCurrentWeather(response) {
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
   document.querySelector(
     "#current-windspeed"
-  ).innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)}`;
+  ).innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)}km/h`;
 }
 
 function searchCity(city) {
