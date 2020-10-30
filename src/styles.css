@@ -47,3 +47,8 @@ ul {
   color: #84ffff;
   font-size: 40px;
 }
+
+.github-link {
+  position: relative;
+  right: -45px;
+}
