@@ -15,11 +15,12 @@ function displayDate() {
 
 displayDate();
 
+
 function getCurrentWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#city-temp").innerHTML = `${Math.round(
     response.data.main.temp
-  )}°C`;
+  )}`;
   document.querySelector(
     "#current-humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;

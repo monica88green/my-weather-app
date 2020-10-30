@@ -41,6 +41,11 @@ ul {
   border: solid #455a64;
 }
 
+.celsius,
+.fahrenheit {
+  font-size: 20px;
+}
+
 .fa-cloud-sun,
 .fa-sun,
 .fa-cloud-sun-rain {
