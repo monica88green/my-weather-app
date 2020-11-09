@@ -54,6 +54,5 @@ ul {
 }
 
 .github-link {
-  position: relative;
-  right: -45px;
+  margin: 0;
 }
