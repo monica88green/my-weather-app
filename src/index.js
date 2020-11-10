@@ -26,6 +26,7 @@ function getCurrentWeather(response) {
   document.querySelector("#city-temp").innerHTML = `${Math.round(
     response.data.main.temp
   )}`;
+  document.querySelector("#weather-icon").setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector(
     "#current-humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
