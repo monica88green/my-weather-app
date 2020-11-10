@@ -1,20 +1,25 @@
-function displayDate() {
+function formatDate(timestamp) {
   let currentDate = new Date();
 
-  let h2 = document.querySelector("h2");
+  let h2 = document.querySelector("#current-date-time");
 
   let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
   let day = days[currentDate.getDay()];
 
   let date = currentDate.getDate();
   let hours = currentDate.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   let minutes = currentDate.getHours();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   h2.innerHTML = `${day}, ${date} ${hours}:${minutes}`;
 }
 
-displayDate();
-
+formatDate();
 
 function getCurrentWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -26,8 +31,7 @@ function getCurrentWeather(response) {
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
   document.querySelector(
     "#current-windspeed"
-  ).innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)}km/h`;
-}
+  ).innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)}km/h`;}
 
 function searchCity(city) {
   let apiKey = `a6280162e920de8e2e14118aadbf3eac`;
