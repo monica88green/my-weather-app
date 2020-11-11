@@ -30,16 +30,17 @@ ul {
 }
 
 .city-search {
-  margin-top: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .city-temp {
   font-size: 32px;
 }
 
-.row {
-  margin-right: -45px;
-  margin-left: 7px;
+.current-humidity,
+.windspeed {
+  float: right;
 }
 
 .units {
