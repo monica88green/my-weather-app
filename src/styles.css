@@ -53,3 +53,12 @@ ul {
   display: block;
   margin-left: 0;
 }
+
+.units .active {
+  color: #455a64;
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}

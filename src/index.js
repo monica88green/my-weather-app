@@ -22,9 +22,11 @@ formatDate();
 
 
 function getCurrentWeather(response) {
+  celsiusTemp = response.data.main.temp;
+
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#city-temp").innerHTML = `${Math.round(
-    response.data.main.temp
+    celsiusTemp
   )}`;
   document.querySelector("#weather-icon").setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector(
@@ -49,8 +51,38 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
+function getFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#city-temp");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+
+  let fahrenheitTemp = (celsiusTemp * 9)/5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  
+}
+
+function getCelsiusTemp(event) {
+  event.preventDefault();
+
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  
+
+  let temperatureElement = document.querySelector("#city-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", getFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", getCelsiusTemp);
 
 searchCity("Denver");
