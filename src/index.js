@@ -1,4 +1,13 @@
 function formatDate(timestamp) {
+
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let day = days[date.getDay()];
+
+  return `${day}, ${formatHours(timestamp)}`
+;}
+ 
+
+function formatHours(timestamp) {
   let date= new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -8,12 +17,8 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  let day = days[date.getDay()];
-
-  return `${day}, ${hours}:${minutes}`
-;}
- 
+  return `${hours}:${minutes}`;
+}
 
 
 function getCurrentWeather(response) {
@@ -46,9 +51,10 @@ function getForecast(response) {
   forecast = response.data.list[index];
   forecastElement.innerHTML += `
         <div class="col-2">
+        <h3 class="future-weather">${formatHours(forecast.dt * 1000)}</h3>
           <div><img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"<div>
           <div class="hourly-temp" id="hourly-forecast">
-            <strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(forecast.main.temp_min)}°
+           <span class="max-temp"><strong>${Math.round(forecast.main.temp_max)}°</strong></span><span class="min-temp">${Math.round(forecast.main.temp_min)}°</span>
           </div>
         </div>`;
 
