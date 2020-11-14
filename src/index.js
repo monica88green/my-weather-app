@@ -1,6 +1,5 @@
-function formatDate(timestamp) {
-  let currentDate = new Date(timestamp);
-
+function formatDate() {
+  let currentDate = new Date();
   let h2 = document.querySelector("#current-date-time");
 
   let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
@@ -13,12 +12,13 @@ function formatDate(timestamp) {
   }
   let minutes = currentDate.getHours();
   if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+    minutes = `0${minutes}`;}
   
-  h2.innerHTML = `${day}, ${date} ${hours}:${minutes}`;
+  h2.innerHTML= `${day}, ${date} ${hours}:${minutes}`;
 }
 formatDate();
+
+ 
 
 
 function getCurrentWeather(response) {
@@ -34,7 +34,7 @@ function getCurrentWeather(response) {
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
   document.querySelector(
     "#current-windspeed"
-  ).innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)}km/h`}
+  ).innerHTML = `Windspeed: ${Math.round(response.data.wind.speed)}km/h`;}
 
 
 function getForecast(response) {
@@ -46,7 +46,6 @@ function getForecast(response) {
   forecast = response.data.list[index];
   forecastElement.innerHTML += `
         <div class="col-2">
-          <h3>12:00</h3>
           <div><img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"<div>
           <div class="hourly-temp" id="hourly-forecast">
             <strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(forecast.main.temp_min)}°
